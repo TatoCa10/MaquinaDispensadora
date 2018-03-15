@@ -88,8 +88,9 @@ public class Admin_Casilla {
         
 
         //1.Consulta
-        ArrayList<Casilla> respuesta = new ArrayList<Casilla>();
+        ArrayList<Casilla> respuesta = new ArrayList<>();
         String consulta = "SELECT * FROM Casilla";
+        Casilla casilla = new Casilla();
         try {
             //Statement
             Statement statement
@@ -99,8 +100,10 @@ public class Admin_Casilla {
                     = statement.executeQuery(consulta);
             //----------------------------
             //Recorrido sobre el resultado
+            int i=0;
             while (resultado.next()) {
                 respuesta.add((Casilla) resultado);
+                i++;
             }
 
         } catch (SQLException ex) {
