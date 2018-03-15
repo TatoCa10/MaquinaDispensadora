@@ -88,7 +88,7 @@ public class Admin_Casilla {
         
 
         //1.Consulta
-        ArrayList<Casilla> respuesta = new ArrayList<>();
+        ArrayList respuesta = new ArrayList<>();
         String consulta = "SELECT * FROM Casilla";
         Casilla casilla = new Casilla();
         try {
@@ -102,7 +102,7 @@ public class Admin_Casilla {
             //Recorrido sobre el resultado
             int i=0;
             while (resultado.next()) {
-                respuesta.add((Casilla) resultado);
+                respuesta.add(resultado);
                 i++;
             }
 
