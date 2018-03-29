@@ -121,6 +121,6 @@
             <url>http://download.java.net/maven/glassfish</url>
         </pluginRepository>
     </pluginRepositories>
-    <name>AppuMartMaven</name>
+    <name>MaquinaDispensadora</name>
 </project>
 

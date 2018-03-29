@@ -21,6 +21,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import util.Conexion;
 import vo.Casilla;
+import vo.Producto;
 
 
 
@@ -85,12 +86,11 @@ public class Admin_Casilla {
     }
     
     public ArrayList<Casilla> leerCasilla() {
-        
 
         //1.Consulta
-        ArrayList respuesta = new ArrayList<>();
+        ArrayList<Casilla> respuesta = new ArrayList<Casilla>();
         String consulta = "SELECT * FROM Casilla";
-        Casilla casilla = new Casilla();
+
         try {
             //Statement
             Statement statement
@@ -100,10 +100,17 @@ public class Admin_Casilla {
                     = statement.executeQuery(consulta);
             //----------------------------
             //Recorrido sobre el resultado
-            int i=0;
             while (resultado.next()) {
-                respuesta.add(resultado);
-                i++;
+                
+                Casilla casillaVO = new Casilla();
+                Producto productoVO = new Producto();
+
+                casillaVO.setID(resultado.getString(1));
+                casillaVO.setEspacio(resultado.getInt(2));
+                productoVO.setNombre(resultado.getString(3));
+                casillaVO.setProducto(productoVO);
+                casillaVO.setCantidadProducto(resultado.getInt(4));
+                respuesta.add(casillaVO);
             }
 
         } catch (SQLException ex) {
