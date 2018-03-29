@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Machine AAC Software</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:700'>
+        <link rel="stylesheet" href="style.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+        <script type="text/javascript" src="AjaxTest.js"></script>
+
+        <script>
+            var a = 'A';
+            var b = 'B';
+            var c = 'C';
+            var num1 = '1';
+            var num2 = '2';
+            var num3 = '3';
+            var num4 = '4';
+            var num5 = '5';
+            var num6 = '6';
+            var num7 = '7';
+            var num8 = '8';
+            var num9 = '9';
+            var comando = '';
+            var check = true;
+            var suma = 0;
+            var denominaciones = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            function resizeIframe() {
+                var miIframe = document.getElementById("myiframe");
+                var alturaPagina = miIframe.contentWindow.document.body.scrollHeight;
+                miIframe.style.height = alturaPagina;
+            }
+
+            function cargar(id) {
+                contar();
+                if (check === true) {
+                    comando = comando + id;
+                    document.getElementById("text").value = comando;
+                    actualizar();
+                } else {
+                    alert('Maximo de digitos');
+                    alert(comando);
+                }
+            }
+            function contar() {
+                if (comando.length <= 2) {
+                    check = true;
+                } else {
+                    check = false;
+                }
+            }
+            ;
+            function mandarCode() {
+                document.getElementById("launch").click();
+                /*Buscar Base De Datos Precio
+                 
+                 if (document.getElementById("text").value === "A1") {
+                 pedir();
+                 }*/
+                pedir();
+            }
+            function pedir() {
+                document.getElementById("borde2").innerHTML = "<img src='cocacola.png' alt='CocaCola' width='100' height='100'>";
+                document.getElementById("arreglo").value = denominaciones;
+                for (var i = 0; i < 10; i++) {
+                    denominaciones[i] = 0;
+                }
+                suma=0;
+                document.getElementById("dinero").value = "$0";
+                console.log("pedir()");
+                /*document.getElementById("submit_tabla").click();*/
+            }
+            function cancelar() {
+                document.getElementById("text").value = "CODE";
+                document.getElementById("launch").click();
+                document.getElementById("dinero").value = "$0";
+                comando = "";
+                suma = 0;
+                for (var i = 0; i < 10; i++) {
+                    denominaciones[i] = 0;
+                }
+                /*Regresar Vueltas*/
+            }
+            function actualizar() {
+                if (check === true) {
+                    document.getElementById("launch").click();
+                }
+                contar();
+            }
+            function respuesta(plata) {
+                switch (plata) {
+                    case 50:
+                        denominaciones[0] = denominaciones[0] + 1;
+                        break;
+                    case 100:
+                        denominaciones[1] = denominaciones[1] + 1;
+                        break;
+                    case 200:
+                        denominaciones[2] = denominaciones[2] + 1;
+                        break;
+                    case 500:
+                        denominaciones[3] = denominaciones[3] + 1;
+                        break;
+                    case 1000:
+                        denominaciones[4] = denominaciones[4] + 1;
+                        break;
+                    case 2000:
+                        denominaciones[5] = denominaciones[5] + 1;
+                        break;
+                    case 5000:
+                        denominaciones[6] = denominaciones[6] + 1;
+                        break;
+                    case 10000:
+                        denominaciones[7] = denominaciones[7] + 1;
+                        break;
+                    case 20000:
+                        denominaciones[8] = denominaciones[8] + 1;
+                        break;
+                    case 50000:
+                        denominaciones[9] = denominaciones[9] + 1;
+                        break;
+                }
+
+                if (plata === 1001) {
+                    plata = 1000;
+                }
+                suma = suma + plata;
+                document.getElementById("dinero").value = suma;
+
+                /*document.getElementById("submit_tabla").click();*/
+                /*document.getElementById("launch").click();*/
+                /*alert(suma);*/
+            }
+        </script>
+    </head>
+
+    <body style="overflow-y:hidden; overflow-x:hidden">
+        <div id="full">
+
+            <iframe id="myiframe" src="lista.html" height="500" width="400"  align="middle"  frameborder="no" allowtransparency="true" style="position: relative; z-index: 1"></iframe>
+
+
+            <div id="PanelGeneral">
+                <div id="controles">
+                    <div id="noborrar">
+
+
+                        <div class="input">
+                            <input id="text" type="text" value="CODE" style="visibility: hidden"/>
+                            <button id="launch" style="visibility: hidden">Pedir</button>
+                        </div>
+                        <div class="panel"></div>
+                        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+                        <script  src="index.js"></script>
+
+
+                        <div id="teclado">
+                            <button onclick="cargar(a)">A</button><button onclick="cargar(b)">B</button><button onclick="cargar(c)">C</button> <br>
+                            <button onclick="cargar(num1)">1</button><button onclick="cargar(num2)">2</button><button onclick="cargar(num3)">3</button> <br>
+                            <button onclick="cargar(num4)">4</button><button onclick="cargar(num5)">5</button><button onclick="cargar(num6)">6</button> <br>
+                            <button onclick="cargar(num7)">7</button><button onclick="cargar(num8)">8</button><button onclick="cargar(num9)">9</button> <br>
+                            <button style="width: 165px" onclick="mandarCode()" id="pedir">Pedir</button><br>
+                            <button style="width: 165px" onclick="cancelar()" id="cancelar">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="borde">
+                <div id="hole">
+                    <img class="tabla" src="50.png" alt="50 COP"><br>
+                    <img class="tabla2" src="5000.jpg" alt="50 COP"><br>
+                </div>
+            </div>
+
+            <form name="FormularioTabla">
+                <div class="input" id="divdinero" style="margin-left: 0px; margin-right: 0px">
+                    <input id="dinero" type="text" value="$0" style="width: 160px"/><input id="arreglo" name="arreglo" type="text" value="" style=""/><input type="submit" id="submit_tabla">
+                </div>
+            </form>
+
+            <div id="tabla" style="position: relative; z-index: 1">
+                <table border="1" style="text-align: center">
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><img class="tabla" src="50.png" alt="50 COP" onclick="respuesta(50)"></td>
+                        <td><img class="tabla2" src="2000.png" alt="2000 COP" onclick="respuesta(2000)"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tabla" src="100.png" alt="100 COP" onclick="respuesta(100)"></td>
+                        <td><img class="tabla2" src="5000.jpg" alt="5000 COP" onclick="respuesta(5000)"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tabla" src="200.png" alt="100 COP" onclick="respuesta(200)"></td>
+                        <td><img class="tabla2" src="10000.jpg" alt="10000 COP" onclick="respuesta(10000)"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tabla" src="500.png" alt="500 COP" onclick="respuesta(500)"></td>
+                        <td><img class="tabla2" src="20000.png" alt="20000 COP" onclick="respuesta(20000)"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="tabla" src="1000.png" alt="1000 COP" onclick="respuesta(1000)"></td>
+                        <td><img class="tabla2" src="50000.jpg" alt="50000 COP" onclick="respuesta(50000)"></td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+        </div>
+        <div id="izq"><p id="log"></p></div>
+        <div id="der"></div>
+        <div id="logo"><img src="logo.png" alt="AAC Logo" width="250" height="70"></div>
+        <div id="borde2"></div>
+    </body>
+
+</html>
