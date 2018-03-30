@@ -9,7 +9,6 @@ package dao.admin;
  *
  * @author Carlos Alberto
  */
-
 import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,20 +22,18 @@ import util.Conexion;
 import vo.Casilla;
 import vo.Producto;
 
-
-
 public class Admin_Casilla {
-    
+
     private Connection conexion;
-    
+
     public Admin_Casilla() {
-       try {
+        try {
             this.conexion = Conexion.getConnection();
         } catch (URISyntaxException ex) {
             Logger.getLogger(Admin_Casilla.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
     public boolean crearCasilla(Casilla casilla) {
         boolean resultado = false;
         try {
@@ -50,7 +47,7 @@ public class Admin_Casilla {
             statement.setInt(2, casilla.getEspacio());
             statement.setString(3, casilla.getProducto().getNombre());
             statement.setInt(4, casilla.getCantidadProducto());
-            
+
             //--------------------------------------
             //3. Hacer la ejecucion
             resultado = statement.execute();
@@ -61,7 +58,7 @@ public class Admin_Casilla {
 
         return resultado;
     }
-    
+
     public boolean modificarCasilla(Casilla casilla) {
         boolean result = false;
         String query = "update Casilla set ID = ?, Espacio = ?, Producto = ?, CantidadProducto= ? where ID = ?";
@@ -72,8 +69,7 @@ public class Admin_Casilla {
             preparedStmt.setInt(2, casilla.getEspacio());
             preparedStmt.setString(3, casilla.getProducto().getNombre());
             preparedStmt.setInt(4, casilla.getCantidadProducto());
-            
-            
+
             if (preparedStmt.executeUpdate() > 0) {
                 result = true;
             }
@@ -84,11 +80,14 @@ public class Admin_Casilla {
 
         return result;
     }
-    
+
     public ArrayList<Casilla> leerCasilla() {
+        Admin_Producto producoDAO = new Admin_Producto();
 
         //1.Consulta
-        ArrayList<Casilla> respuesta = new ArrayList<Casilla>();
+        ArrayList<Casilla> respuesta = new ArrayList<>();
+        ArrayList<Producto> productos = new ArrayList<>();
+        productos = producoDAO.leerProducto();
         String consulta = "SELECT * FROM Casilla";
 
         try {
@@ -101,14 +100,20 @@ public class Admin_Casilla {
             //----------------------------
             //Recorrido sobre el resultado
             while (resultado.next()) {
-                
+
                 Casilla casillaVO = new Casilla();
-                Producto productoVO = new Producto();
 
                 casillaVO.setID(resultado.getString(1));
                 casillaVO.setEspacio(resultado.getInt(2));
-                productoVO.setNombre(resultado.getString(3));
-                casillaVO.setProducto(productoVO);
+
+                for (int i = 0; i < productos.size(); i++) {
+
+                    if (productos.get(i).nombre.equals(resultado.getString(3))) {
+                        casillaVO.setProducto(productos.get(i));
+                    }
+
+                }
+
                 casillaVO.setCantidadProducto(resultado.getInt(4));
                 respuesta.add(casillaVO);
             }
@@ -119,7 +124,7 @@ public class Admin_Casilla {
 
         return respuesta;
     }
-    
+
     public boolean borrarCasilla(Casilla casilla) {
         boolean result = false;
         String query = "delete from Casilla where ID = ?";
@@ -134,5 +139,5 @@ public class Admin_Casilla {
 
         return result;
     }
-    
+
 }
