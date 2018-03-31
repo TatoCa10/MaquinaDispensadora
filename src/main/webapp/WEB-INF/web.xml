@@ -6,7 +6,7 @@
     </welcome-file-list>
     <servlet>
         <servlet-name>ServletTest</servlet-name>
-        <servlet-class>ServletTest</servlet-class>
+        <servlet-class>controlador.ServletTest</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletProductos</servlet-name>
@@ -14,7 +14,7 @@
     </servlet>
     <servlet>
         <servlet-name>ServletCargaLista</servlet-name>
-        <servlet-class>ServletCargaLista</servlet-class>
+        <servlet-class>controlador.ServletCargaLista</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ServletCasillas</servlet-name>
