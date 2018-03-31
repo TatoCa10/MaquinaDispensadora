@@ -2,15 +2,15 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>panel.html</welcome-file>
     </welcome-file-list>
     <servlet>
-        <servlet-name>MainMenuServlet</servlet-name>
-        <servlet-class>controlador.MainMenuServlet</servlet-class>
+        <servlet-name>ServletTest</servlet-name>
+        <servlet-class>controlador.ServletTest</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SeleccionTiendaServlet</servlet-name>
-        <servlet-class>controlador.SeleccionTiendaServlet</servlet-class>
+        <servlet-name>ServletCargaLista</servlet-name>
+        <servlet-class>controlador.ServletCargaLista</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginUsuarioServlet</servlet-name>
@@ -99,8 +99,8 @@
         <url-pattern>/ListarTiendasServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SeleccionTiendaServlet</servlet-name>
-        <url-pattern>/SeleccionTiendaServlet</url-pattern>
+        <servlet-name>ServletCargaLista</servlet-name>
+        <url-pattern>/ServletCargaLista</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RegistroUsuarioServlet</servlet-name>
@@ -111,8 +111,8 @@
         <url-pattern>/EditarCompradorServlet</url-pattern>
     </servlet-mapping>   
     <servlet-mapping>
-        <servlet-name>MainMenuServlet</servlet-name>
-        <url-pattern>/MainMenuServlet</url-pattern>
+        <servlet-name>ServletTest</servlet-name>
+        <url-pattern>/ServletTest</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>MostrarTiendaServlet</servlet-name>
