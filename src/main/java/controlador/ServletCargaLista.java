@@ -1,35 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controlador;
 
-import com.google.gson.Gson;
-import dao.admin.Admin_Casilla;
 
+//import dao.TiendaDAO;
+import dao.admin.Admin_Casilla;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import vo.Casilla;
-
+//import vo.TiendaVO;
 
 /**
  *
- * @author Carlos Alberto
+ * @author Nicolas
  */
-@WebServlet(name = "AgregarCarritoServlet", urlPatterns = {"/AgregarCarritoServlet"})
 public class ServletCargaLista extends HttpServlet {
 
-    
+    //private ArrayList<ProductoVO> productos;
+    //private DAOProducto prodDAO;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -42,10 +36,10 @@ public class ServletCargaLista extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("application/json");
-        try (PrintWriter out = response.getWriter()) {
-            
-            
-            
+//        try (PrintWriter out = response.getWriter()) {
+//            
+//            
+//            
 //            Admin_Casilla casilla = new Admin_Casilla();
 //            Casilla casillaVO = new Casilla();
 //            
@@ -71,7 +65,7 @@ public class ServletCargaLista extends HttpServlet {
 //
 //            mainJson.put("test", "CORRECTO");
 //            out.print(mainJson);
-        }
+//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -86,11 +80,11 @@ public class ServletCargaLista extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
+        processRequest(request, response);
         response.setContentType("application/json");
         try (PrintWriter out = response.getWriter()) {
             
-            System.out.println("se reprodujo servlet");
+            
             
             Admin_Casilla casilla = new Admin_Casilla();
             Casilla casillaVO = new Casilla();
@@ -115,7 +109,7 @@ public class ServletCargaLista extends HttpServlet {
             JSONObject mainJson = new JSONObject();
             mainJson.put("casillas",array);
 
-            mainJson.put("test", "CORRECTO");
+            //mainJson.put("test", "CORRECTO");
             out.print(mainJson);
         }
 

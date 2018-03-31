@@ -5,126 +5,60 @@
         <welcome-file>panel.html</welcome-file>
     </welcome-file-list>
     <servlet>
-        <servlet-name>ServletCargaLista</servlet-name>
-        <servlet-class>controlador.ServletCargaLista</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ServletTest</servlet-name>
-        <servlet-class>controlador.ServletTest</servlet-class>
+        <servlet-class>ServletTest</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LoginUsuarioServlet</servlet-name>
-        <servlet-class>controlador.LoginUsuarioServlet</servlet-class>
+        <servlet-name>ServletProductos</servlet-name>
+        <servlet-class>ServletProductos</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ListarTiendasServlet</servlet-name>
-        <servlet-class>controlador.ListarTiendasServlet</servlet-class>
+        <servlet-name>ServletCargaLista</servlet-name>
+        <servlet-class>ServletCargaLista</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>EditarCompradorServlet</servlet-name>
-        <servlet-class>controlador.EditarCompradorServlet</servlet-class>
+        <servlet-name>ServletCasillas</servlet-name>
+        <servlet-class>ServletCasillas</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AgregarCarritoServlet</servlet-name>
-        <servlet-class>controlador.AgregarCarritoServlet</servlet-class>
+        <servlet-name>ServletCajas</servlet-name>
+        <servlet-class>ServletCajas</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AgregarProductoServlet</servlet-name>
-        <servlet-class>controlador.AgregarProductoServlet</servlet-class>
+        <servlet-name>Servlet_Productos</servlet-name>
+        <servlet-class>Servlet_Productos</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>RegistroUsuarioServlet</servlet-name>
-        <servlet-class>controlador.RegistroUsuarioServlet</servlet-class>
+        <servlet-name>Servlet_Transacciones</servlet-name>
+        <servlet-class>Servlet_Transacciones</servlet-class>
     </servlet>
-    
-    <servlet>
-        <servlet-name>RegistrarVendedorServlet</servlet-name>
-        <servlet-class>controlador.RegistrarVendedorServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>LoginVendedorServlet</servlet-name>
-        <servlet-class>controlador.LoginVendedorServlet</servlet-class>
-    </servlet>
-    
-    <servlet>
-        <servlet-name>MostrarTiendaServlet</servlet-name>
-        <servlet-class>controlador.MostrarTiendaServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ProductosBodegaServlet</servlet-name>
-        <servlet-class>controlador.ProductosBodegaServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CrearTiendaServlet</servlet-name>
-        <servlet-class>controlador.CrearTiendaServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>EditarTiendaServlet</servlet-name>
-        <servlet-class>controlador.EditarTiendaServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>CerrarSesionServlet</servlet-name>
-        <servlet-class>controlador.CerrarSesionServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginUsuarioServlet</servlet-name>
-        <url-pattern>/LoginUsuarioServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AgregarProductoServlet</servlet-name>
-        <url-pattern>/AgregarProductoServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AgregarCarritoServlet</servlet-name>
-        <url-pattern>/AgregarCarritoServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RegistrarVendedorServlet</servlet-name>
-        <url-pattern>/RegistrarVendedorServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LoginVendedorServlet</servlet-name>
-        <url-pattern>/LoginVendedorServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ListarTiendasServlet</servlet-name>
-        <url-pattern>/ListarTiendasServlet</url-pattern>
-    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletTest</servlet-name>
         <url-pattern>/ServletTest</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>RegistroUsuarioServlet</servlet-name>
-        <url-pattern>/RegistroUsuarioServlet</url-pattern>
+        <servlet-name>ServletProductos</servlet-name>
+        <url-pattern>/ServletProductos</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EditarCompradorServlet</servlet-name>
-        <url-pattern>/EditarCompradorServlet</url-pattern>
-    </servlet-mapping>   
     <servlet-mapping>
         <servlet-name>ServletCargaLista</servlet-name>
         <url-pattern>/ServletCargaLista</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>MostrarTiendaServlet</servlet-name>
-        <url-pattern>/MostrarTiendaServlet</url-pattern>
+        <servlet-name>ServletCasillas</servlet-name>
+        <url-pattern>/ServletCasillas</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CrearTiendaServlet</servlet-name>
-        <url-pattern>/CrearTiendaServlet</url-pattern>
+        <servlet-name>ServletCajas</servlet-name>
+        <url-pattern>/ServletCajas</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ProductosBodegaServlet</servlet-name>
-        <url-pattern>/ProductosBodegaServlet</url-pattern>
+        <servlet-name>Servlet_Productos</servlet-name>
+        <url-pattern>/Servlet_Productos</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>EditarTiendaServlet</servlet-name>
-        <url-pattern>/EditarTiendaServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CerrarSesionServlet</servlet-name>
-        <url-pattern>/CerrarSesionServlet</url-pattern>
+        <servlet-name>Servlet_Transacciones</servlet-name>
+        <url-pattern>/Servlet_Transacciones</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -132,5 +66,3 @@
         </session-timeout>
     </session-config>
 </web-app>
-    
-

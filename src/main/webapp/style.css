@@ -96,8 +96,7 @@ iframe{
     background: #333333;
     width: 200px;
     min-height: 200px;
-
-
+    color: #ffffff;
     overflow: hidden;
     position: relative;
     top: -400px;
@@ -187,4 +186,11 @@ body{
 #log{
     position: relative;
     top: 100px;
+}
+
+#cerradura{
+    position: relative;
+    top: -3480px;
+    left: 900px
+    /*left: 1145px*/
 }

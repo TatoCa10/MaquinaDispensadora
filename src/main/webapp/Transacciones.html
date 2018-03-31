@@ -1,0 +1,189 @@
+<html>
+    <head>
+        <title>Transacciones</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="AjaxTransacciones.js"></script>
+        <style>
+            body{
+                color: #ffffff;
+                background-color: #333333;
+            }
+            .myButton5 {
+                -moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+                -webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+                box-shadow:inset 0px 1px 0px 0px #f5978e;
+                background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+                background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+                background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+                background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+                background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+                background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+                background-color:#f24537;
+                -moz-border-radius:6px;
+                -webkit-border-radius:6px;
+                border-radius:6px;
+                border:1px solid #d02718;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-family:Arial;
+                font-size:15px;
+                font-weight:bold;
+                padding:6px 24px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #810e05;
+            }
+            .myButton5:hover {
+                background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+                background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+                background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+                background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+                background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+                background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+                background-color:#c62d1f;
+            }
+            .myButton5:active {
+                position:relative;
+                top:1px;
+            }
+
+            #lista5 {
+                counter-reset: li; 
+                list-style: none; 
+                *list-style: decimal; 
+                font: 15px 'trebuchet MS', 'lucida sans';
+                padding: 0;
+                margin-bottom: 4em;
+                text-shadow: 0 1px 0 rgba(255,255,255,.5);
+            }
+
+            #lista5 ol {
+                margin: 0 0 0 2em; 
+            }
+
+            #lista5 {
+                list-style-type: none;
+                margin: 0;
+                margin-left: 1em;
+                padding: 0;
+
+                counter-reset: li-counter;
+            }
+
+            #lista5 > li{
+                position: relative;
+                margin-bottom: 1.5em;
+                padding: 1.5em;
+                background-color: #eaeaea;
+                color: #333333;
+            }
+
+            #lista5 > li:before {
+                position: absolute;
+                top: -0.3em;
+                left: -0.5em;
+                width: 1.8em;
+                height: 1.2em;
+
+                font-size: 2em;
+                line-height: 1.2;
+                font-weight: bold;
+                text-align: center;
+                color: #464646;
+                background-color: #d0d0d0;
+
+                transform: rotate(-20deg);
+                -ms-transform: rotate(-20deg);
+                -webkit-transform: rotate(-20deg);
+                z-index: 99;
+                overflow: hidden;
+
+                content: counter(li-counter);
+                counter-increment: li-counter;
+            }
+
+
+
+
+
+
+
+
+
+            #lista2 {
+                counter-reset: li; 
+                list-style: none; 
+                *list-style: decimal; 
+                font: 15px 'trebuchet MS', 'lucida sans';
+                padding: 0;
+                margin-bottom: 4em;
+                text-shadow: 0 1px 0 rgba(255,255,255,.5);
+            }
+
+            #lista2 ol {
+                margin: 0 0 0 2em; 
+            }
+
+            #lista2 li{
+                position: relative;
+                display: block;
+                padding: .4em .4em .4em 2em;
+                *padding: .4em;
+                margin: .5em 0;
+                background: #ddd;
+                color: #444;
+                text-decoration: none;
+                border-radius: .3em;
+                transition: all .3s ease-out;   
+            }
+
+            #lista2 li:hover{
+                background: #eee;
+            }
+
+            #lista2 li:hover:before{
+                transform: rotate(360deg);  
+            }
+
+            #lista2 li:before{
+                content: counter(li);
+                counter-increment: li;
+                position: absolute; 
+                left: -1.3em;
+                top: 50%;
+                margin-top: -1.3em;
+                background: #87ceeb;
+                height: 2em;
+                width: 2em;
+                line-height: 2em;
+                border: .3em solid #fff;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 2em;
+                transition: all .3s ease-out;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div style="font-size: 30px">Transacciones</div>
+
+
+
+    <center>
+
+        <div style="width: 800px; margin-top: 70px">
+            <ol id="lista5">
+                <li>List item</li> 
+            </ol>
+        </div>
+
+        <div id="return">.</div>
+        <a href="MainAdmin.html"><button class="myButton5">Volver</button></a>
+    </center>
+</body>
+</html>

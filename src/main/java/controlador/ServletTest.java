@@ -3,28 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlador;
-
 
 import dao.servicio.Servicio_Caja;
 import dao.servicio.Servicio_Casilla;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import vo.Caja;
 import vo.Casilla;
 
-
 /**
  *
- * @author ayoro
+ * @author Carlos Alberto
  */
 public class ServletTest extends HttpServlet {
 
@@ -158,6 +152,11 @@ public class ServletTest extends HttpServlet {
 
         out.print(json);
 
+//        JSONObject json = new JSONObject();
+//        json.put("confirmacion", denominaciones);
+//
+//        out.print(json);
+
     }
 
     /**
@@ -183,6 +182,5 @@ public class ServletTest extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 
 }

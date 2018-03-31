@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Admin Cajas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="AjaxCajas_Pro.js"></script>
+        <style>
+            body{
+                color: #ffffff;
+                background-color: #333333;
+            }
+            .myButton5 {
+                -moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+                -webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+                box-shadow:inset 0px 1px 0px 0px #f5978e;
+                background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+                background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+                background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+                background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+                background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+                background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+                background-color:#f24537;
+                -moz-border-radius:6px;
+                -webkit-border-radius:6px;
+                border-radius:6px;
+                border:1px solid #d02718;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-family:Arial;
+                font-size:15px;
+                font-weight:bold;
+                padding:6px 24px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #810e05;
+            }
+            .myButton5:hover {
+                background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+                background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+                background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+                background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+                background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+                background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+                background-color:#c62d1f;
+            }
+            .myButton5:active {
+                position:relative;
+                top:1px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div style="font-size: 30px">Administracion de Cajas</div>
+    <center>
+        <div style="margin-bottom: 15px; font-size: 20px"><b><i>Agregar Dinero a Cajas</i></b></div>
+        
+            <label>50</label><br>
+            <input type="text" id="moneda50" placeholder="Cantidad Monedas"><br>
+            <label>100</label><br>
+            <input type="text" id="moneda100" placeholder="Cantidad Monedas"><br>
+            <label>200</label><br>
+            <input type="text" id="moneda200" placeholder="Cantidad Monedas"><br>
+            <label>500</label><br>
+            <input type="text" id="moneda500" placeholder="Cantidad Monedas"><br>
+            <label>1000</label><br>
+            <input type="text" id="moneda1000" placeholder="Cantidad Monedas"><br>
+            
+            
+            <label>2000</label><br>
+            <input type="text" id="billete2000" placeholder="Cantidad Billetes"><br>
+            <label>5000</label><br>
+            <input type="text" id="billete5000" placeholder="Cantidad Billetes"><br>
+            <label>10000</label><br>
+            <input type="text" id="billete10000" placeholder="Cantidad Billetes"><br>
+            <label>20000</label><br>
+            <input type="text" id="billete20000" placeholder="Cantidad Billetes"><br>
+            <label>50000</label><br>
+            <input type="text" id="billete50000" placeholder="Cantidad Billetes"><br>
+            
+            <button id="Cargar_Dinero" style="margin-top: 15px">Agregar Dinero</button>
+
+        
+        
+            <div id="return" style="margin-bottom: 15px">.</div>
+        <a href="MainAdmin.html"><button class="myButton5">Volver</button></a>
+    </center>
+    </body>
+</html>

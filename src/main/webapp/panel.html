@@ -28,6 +28,8 @@
             var check = true;
             var suma = 0;
             var denominaciones = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            var valores = [2000, 3500, 70000, 800, 1300, 600, 800, 1500];
+            var cantidades = [2, 4, 7, 1, 2, 2, 3, 3];
             function resizeIframe() {
                 var miIframe = document.getElementById("myiframe");
                 var alturaPagina = miIframe.contentWindow.document.body.scrollHeight;
@@ -60,30 +62,10 @@
                  if (document.getElementById("text").value === "A1") {
                  pedir();
                  }*/
-                pedir();
+                /*pedir();*/
+                servicio();
             }
-            function pedir() {
-                document.getElementById("borde2").innerHTML = "<img src='cocacola.png' alt='CocaCola' width='100' height='100'>";
-                document.getElementById("arreglo").value = denominaciones;
-                for (var i = 0; i < 10; i++) {
-                    denominaciones[i] = 0;
-                }
-                suma=0;
-                document.getElementById("dinero").value = "$0";
-                console.log("pedir()");
-                /*document.getElementById("submit_tabla").click();*/
-            }
-            function cancelar() {
-                document.getElementById("text").value = "CODE";
-                document.getElementById("launch").click();
-                document.getElementById("dinero").value = "$0";
-                comando = "";
-                suma = 0;
-                for (var i = 0; i < 10; i++) {
-                    denominaciones[i] = 0;
-                }
-                /*Regresar Vueltas*/
-            }
+
             function actualizar() {
                 if (check === true) {
                     document.getElementById("launch").click();
@@ -124,15 +106,25 @@
                         break;
                 }
 
-                if (plata === 1001) {
-                    plata = 1000;
-                }
                 suma = suma + plata;
                 document.getElementById("dinero").value = suma;
 
                 /*document.getElementById("submit_tabla").click();*/
                 /*document.getElementById("launch").click();*/
                 /*alert(suma);*/
+            }
+            
+            function ingresarAdmin(){
+                document.getElementById("Input_Admin").style.visibility='visible';
+            }
+            function testPass(clave){
+                if(clave==="101099"){
+                    location.reload();
+                    location.href="MainAdmin.html";
+                }
+                else{
+                    document.getElementById("log").append("Error de llave");
+                }
             }
         </script>
     </head>
@@ -172,14 +164,14 @@
 
             <div id="borde">
                 <div id="hole">
-                    <img class="tabla" src="50.png" alt="50 COP"><br>
-                    <img class="tabla2" src="5000.jpg" alt="50 COP"><br>
                 </div>
             </div>
 
             <form name="FormularioTabla">
                 <div class="input" id="divdinero" style="margin-left: 0px; margin-right: 0px">
-                    <input id="dinero" type="text" value="$0" style="width: 160px"/><input id="arreglo" name="arreglo" type="text" value="" style=""/><input type="submit" id="submit_tabla">
+                    <input id="dinero" type="text" value="$0" style="width: 160px"/>
+                    <input id="arreglo" name="arreglo" type="text" value="" style="visibility: hidden"/>
+                    <input type="submit" id="submit_tabla">
                 </div>
             </form>
 
@@ -219,6 +211,15 @@
         <div id="der"></div>
         <div id="logo"><img src="logo.png" alt="AAC Logo" width="250" height="70"></div>
         <div id="borde2"></div>
+        
+        
+        <div id="cerradura" style="cursor: no-drop" onclick="ingresarAdmin()"><img src="cerradura.png" height="50" width="50" alt="Cerradura"></div>
+        <div id="Input_Admin" style="position: relative; top: -3600px; left: 1300px; visibility: hidden ">
+            <label>Señor Administrador</label><br>
+            <label>Ingrese la llave:</label><br>
+            <input type="password" id="Pass_Admin" style="border: none; background: #333333; color: #E8E8E8; height: auto; font-size: 20px; border-radius: 5px; padding: 5px; margin-top: 10px;">
+            <br><button id="Llave" style="width: 100px; height: 30px; margin-left: 75px;" onclick="testPass(document.getElementById('Pass_Admin').value)">Administrar</button>
+        </div>
     </body>
 
 </html>
